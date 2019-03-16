@@ -36,7 +36,7 @@ export class ForgetPasswordComponent implements OnInit{
     const userEmail=  this.myForgetFrm.value.email;
     console.log(userEmail)
     this.forgetService.getEmail(userEmail).subscribe(res=>{
-        console.log(res)
+        // console.log(res)
       })
   }
 
