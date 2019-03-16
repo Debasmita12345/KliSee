@@ -5,6 +5,7 @@ import { LoginComponent } from './login/login.component';
 import { SignupComponent } from './signup/signup.component';
 import { FlooringComponent } from './flooring/flooring.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/home', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'login', component: LoginComponent },
   { path: 'signup', component: SignupComponent },
   { path: 'flooring', component: FlooringComponent },
-  { path: 'forget-password', component: ForgetPasswordComponent}
+  { path: 'forget-password', component: ForgetPasswordComponent},
+  { path: 'reset-password', component: ResetPasswordComponent}
 ];
 
 @NgModule({

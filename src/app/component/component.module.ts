@@ -10,6 +10,7 @@ import { SignupComponent } from './signup/signup.component';
 import { HeaderComponent } from './header/header.component';
 import { FlooringComponent } from './flooring/flooring.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetPasswordComponent } from './reset-password/reset-password.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { ForgetPasswordComponent } from './forget-password/forget-password.compo
     SignupComponent,
     HeaderComponent,
     FlooringComponent,
-    ForgetPasswordComponent
+    ForgetPasswordComponent,
+    ResetPasswordComponent
   ],
   imports: [
     CommonModule,
