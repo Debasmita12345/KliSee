@@ -1,0 +1,72 @@
+<app-header></app-header>
+<main class="body-wrapper">
+  <section class="main-heading-wrapper">
+    <div class="container">
+      <div class="row">
+          <div class="col-12 heading-tag collect-pin">
+            <h1>Let's get started creating your <strong>Kitchen Remodel Budget!</strong><span>We will need some details to develop the most accurate budget</span></h1>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section class="common-controller-question-answer state-pin-wrapper" *ngIf="!visible" [@slideInOut]>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <figure class="question-answer-holder">
+            <div class="question-answer-title-holder">
+              <h2>What is the location of your project?</h2>
+              <div class="question-answer-icon-holder">
+                <i class="fa fa-map-marker"></i>
+              </div>
+            </div>
+            <figcaption>
+              <form class="question-answer-form">
+                <mat-form-field class="common-style-question-answer put-your-pin">
+                  <input matInput placeholder="Enter Zip Code">
+                </mat-form-field>
+                <div class="nxt-prev-btn-holder">
+                  <button type="button" (click)="visible = !visible" mat-button class="next-btn">Next</button>
+                </div>
+              </form>              
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="common-controller-question-answer state-pin-wrapper" *ngIf="visible" [@slideInOut]>
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <figure class="question-answer-holder">
+            <div class="question-answer-title-holder">
+              <h2>What type of work do you need done</h2>
+              <div class="question-answer-icon-holder">
+                <img src="assets/images/engineer.png" alt="Worker">
+              </div>
+            </div>
+            <figcaption>
+              <form class="question-answer-form">
+                <ul>
+                  <li><mat-checkbox>Pre finished flooring</mat-checkbox></li>
+                  <li><mat-checkbox>Unfinished Flooring</mat-checkbox></li>
+                  <li><mat-checkbox>Sanding and Refinishing existing </mat-checkbox></li>
+                  <li><mat-checkbox>Hardwood Flooring</mat-checkbox></li>
+                  <li><mat-checkbox>Sheet Vinyl</mat-checkbox></li>
+                  <li><mat-checkbox>Luxury Vinyl</mat-checkbox></li>
+                  <li><mat-checkbox>Porcelain or Ceramic tile flooring</mat-checkbox></li>
+                  <li><mat-checkbox>Laminate flooring (Lock & Click floating)</mat-checkbox></li>
+                </ul>
+                <div class="nxt-prev-btn-holder">
+                  <button type="button" (click)="visible = !visible" mat-button class="prev-btn">Previous</button>
+                  <button type="button" (click)="!visible = visible" mat-button class="next-btn">Next</button>
+                </div>
+              </form>              
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
