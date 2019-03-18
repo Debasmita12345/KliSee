@@ -3,6 +3,7 @@ import {FormControl} from '@angular/forms';
 import {Observable} from 'rxjs';
 import {map, startWith} from 'rxjs/operators';
 
+
 @Component({
   selector: 'app-home',
   templateUrl: './home.component.html',
@@ -10,11 +11,15 @@ import {map, startWith} from 'rxjs/operators';
 })
 export class HomeComponent implements OnInit {
 
+  isloggedIn: boolean;
+
   myControl = new FormControl();
   options: string[] = ['Kitchen remodel', 'Bathroom remodel', 'Other'];
   filteredOptions: Observable<string[]>;
 
-  constructor() {}
+  constructor() {
+    this.isloggedIn = false;
+  }
 
   ngOnInit() {
     this.filteredOptions = this.myControl.valueChanges
@@ -22,6 +27,16 @@ export class HomeComponent implements OnInit {
         startWith(''),
         map(value => this._filter(value))
     );
+    if(localStorage.getItem('userId') !== null){
+      this.isloggedIn = true;
+    } else {
+      this.isloggedIn= false; 
+    }
+    
+  }
+
+  LogOut(){
+    localStorage.removeItem('userId')
   }
 
   private _filter(value: string): string[] {

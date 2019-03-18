@@ -29,38 +29,39 @@
         <div class="signup-login-holder">
           <div class="row">
             <div class="col-12 login-signup-form-controller offwhite-bg">
+              <p class="alert">{{message}}</p>
               <form id="myFrm" class="form" [formGroup]="myForm">
                 <ul>
                   <li>
                     <mat-form-field>
                       <!-- <input matInput placeholder="Name" required> -->
                       <input matInput type="text" placeholder="Name" id="one" class="new" formControlName="name">
-                      <!-- <span *ngIf = "this.myForm.controls.name.status!=='VALID' && show">Name is required</span> -->
+                      <mat-error *ngIf = "this.myForm.controls.name.status!=='VALID' && show">Name is required</mat-error>
                     </mat-form-field>
                   </li>
                   <li>
                     <mat-form-field>
                       <input matInput  type="text" placeholder="Email" id="two" class="new" formControlName="email">
-                      <!-- <span *ngIf = "this.myForm.controls.email.status!=='VALID' && show">Email is required</span> -->
+                      <mat-error *ngIf = "this.myForm.controls.name.status!=='VALID' && show">Enter a Valid Email</mat-error>
                     </mat-form-field>
                   </li>
                   <li>
                     <mat-form-field>
                       <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" id="three" class="new" formControlName="password">
-                      <!-- <span *ngIf = "this.myForm.controls.password.status!=='VALID' && show">Password is required</span> -->
                       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      <mat-error *ngIf = "this.myForm.controls.password.status!=='VALID' && show">Minimum 6 digits are Required</mat-error>
                     </mat-form-field>
                   </li>
                   <li>
                     <mat-form-field>
-                        <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" id="four" class="new" formControlName="password1">
-                        <!-- <span *ngIf = "this.myForm.controls.password1.status!=='VALID' && show">Password is required</span> -->
+                        <input matInput placeholder="Confirm Password" [type]="hide ? 'password' : 'text'" id="four" class="new" formControlName="confirm_password">
                         <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                        <mat-error *ngIf = "this.myForm.controls.password.status!=='VALID' && show">Password is required</mat-error>
                     </mat-form-field>
                   </li>
                   <li class="terms-service-controller">By submitting this form you agree to Klisee <a href="">Terms of Service</a></li>
                   <li class="text-center">
-                    <button mat-raised-button class="submit-btn" type="submit" (click)="FormSubmit()">Submit</button>
+                    <button mat-raised-button class="submit-btn" type="submit" (click)="FormSubmit()" [disabled]="!myForm.valid">Submit</button>
                   </li>
                 </ul>
               </form>

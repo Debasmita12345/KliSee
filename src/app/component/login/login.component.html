@@ -29,25 +29,28 @@
         <div class="signup-login-holder">
           <div class="row">
             <div class="col-12 login-signup-form-controller offwhite-bg">
+                <p class="alertlogin">{{message}}</p>
               <form id="myLoginFrm" class="login_form" [formGroup]="myLoginFrm">
                 <ul>
                   <li>
                     <mat-form-field>
                       <!-- <input matInput placeholder="Email" required> -->
                       <input matInput  type="text" placeholder="Email" id="email_login" class="login" formControlName="email">
+                      <mat-error *ngIf = "this.myLoginFrm.controls.email.status!=='VALID' && show">Enter a Valid Email</mat-error>
                     </mat-form-field>
                   </li>
                   <li>
                     <mat-form-field>
                       <input matInput placeholder="Password" [type]="hide ? 'password' : 'text'" id="password_login" class="login" formControlName="password">
                       <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                      <mat-error *ngIf = "this.myLoginFrm.controls.password.status!=='VALID' && show">Minimum 6 digits are Required</mat-error>
                     </mat-form-field>
                   </li>
                   <li class="text-center forgot-password">
                     <a routerLink = "/forget-password">Forgot your password?</a>
                   </li>
                   <li class="text-center">
-                    <button mat-raised-button class="submit-btn" (click)='loginFormSubmit()'>Submit</button>
+                    <button mat-raised-button class="submit-btn" (click)='loginFormSubmit()' [disabled]="!myLoginFrm.valid">Submit</button>
                   </li>
                 </ul>
                 <!--<div class="or-saparater">
