@@ -11,6 +11,6 @@ export class LoginService {
 
   getuserId(data):Observable<any>{
     var body = "email=" + data.email + "&password=" + data.password;
-    return this.http.post(`http://navkiraninfotech.com/Customers/custom/klisee/api/login?`+ body, "")
+    return this.http.post(`https://navkiraninfotech.com/Customers/custom/klisee/api/login?`+ body, "")
   }
 }

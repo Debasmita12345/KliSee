@@ -15,6 +15,6 @@ export class SignUpService {
     var body = "name=" + data.name + "&email=" + data.email + "&password=" + data.password;
     console.log(body)
     // var data1  = {"first_name":"anup","email":"g@YJUYUYUYS","password":"dfsqq"}
-    return this.http.post(`http://navkiraninfotech.com/Customers/custom/klisee/api/signup?`+ body,"")
+    return this.http.post(`https://navkiraninfotech.com/Customers/custom/klisee/api/signup?`+ body,"")
   }
 }
