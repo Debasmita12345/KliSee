@@ -7,6 +7,8 @@ import {MatAutocompleteModule} from '@angular/material/autocomplete';
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
 import {MatRadioModule} from '@angular/material/radio'; 
+import {MatTooltipModule} from '@angular/material/tooltip';
+
 @NgModule({
   declarations: [],
   imports: [
@@ -17,7 +19,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ],
   exports: [
     CommonModule,
@@ -27,7 +30,8 @@ import {MatRadioModule} from '@angular/material/radio';
     MatAutocompleteModule,
     MatButtonModule,
     MatCheckboxModule,
-    MatRadioModule
+    MatRadioModule,
+    MatTooltipModule
   ]
 })
 export class MetarialModule { }

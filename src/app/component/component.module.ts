@@ -12,6 +12,13 @@ import { FlooringComponent } from './flooring/flooring.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
 import { OthersComponent } from './others/others.component';
+import { BudgetAssumptionComponent } from './budget-assumption/budget-assumption.component';
+import { BudgetCalculationComponent } from './budget-calculation/budget-calculation.component';
+import { MaterialCostComponent } from './material-cost/material-cost.component';
+import { ServiceHeadingComponent } from './service-heading/service-heading.component';
+import { WorkTypeComponent } from './work-type/work-type.component';
+import { YourRoomComponent } from './your-room/your-room.component';
+import { LocationComponent } from './location/location.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +29,14 @@ import { OthersComponent } from './others/others.component';
     FlooringComponent,
     ForgetPasswordComponent,
     ResetPasswordComponent,
-    OthersComponent
+    OthersComponent,
+    BudgetAssumptionComponent,
+    BudgetCalculationComponent,
+    MaterialCostComponent,
+    ServiceHeadingComponent,
+    WorkTypeComponent,
+    YourRoomComponent,
+    LocationComponent
   ],
   imports: [
     CommonModule,

@@ -1,0 +1,54 @@
+.body-wrapper{
+    background: linear-gradient(0deg,rgba(228,228,232,0.5),rgba(228,228,232,0.5)), url(/assets/images/bg.jpg) no-repeat;
+    background-size: cover;
+    min-height: calc(100vh - 70px);
+    background-attachment: fixed;
+}
+.budget-calculation-holder{
+    border: 1px solid rgba(68,98,119,0.27);
+    border-radius: 4px;
+    background: linear-gradient(0deg,rgba(255,255,255,0.85)30%,rgba(255,255,255,0.50)70%);
+    padding: 30px;
+    width: 98%;
+    max-width: 700px;
+    margin: 0 auto 20px;
+    min-height: 400px;
+}
+.budget-calculation-holder a{
+    color: #446277;
+}
+.budget-calculation-holder h2{
+    font-size: 32px;
+    color: #446277;
+}
+.budget-calculation-controller.table .thead-dark th{
+    background-color: #446277;
+}
+.border-right-dark{
+    border-right: 1px solid #446277;
+}
+.border-top-and-bottom{
+    border-top: 1px solid #446277;
+    border-bottom: 1px solid #446277;
+}
+.budget-calculation-controller td{
+    color: #446277;
+}
+.width-30{
+    width:30%;
+}
+.width-20{
+    width:20%;
+}
+.border-bottom-dark{
+    border-bottom: 1px solid #446277;
+}
+.font-bold td{
+    font-weight: bold;
+}
+.color-blue{
+    color:#446277;
+}
+.border-bottom-offwhite{
+    border-bottom: 1px solid #f6f6f6;
+}

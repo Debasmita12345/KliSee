@@ -14,7 +14,8 @@
             <a class="nav-link" routerLink="/login" *ngIf="isloggedIn" (click)="LogOut()">Log Out</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/signup">Sign Up</a>
+            <a class="nav-link" routerLink="/signup" *ngIf="!isloggedIn">Sign Up</a>
+            <a class="nav-link" routerLink="/home" *ngIf="isloggedIn">My Account</a>
           </li>
         </ul>
       </div>

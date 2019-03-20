@@ -53,7 +53,7 @@ export class HomeComponent implements OnInit {
           // console.log(i)
           //console.log(model)
           this.dataArr1.push(model)
-          sessionStorage.setItem('modelId', res.data[2].remodel_id )
+          //sessionStorage.setItem('modelId', res.data[2].remodel_id )
           // console.log(this.dataArr1)
           
         }
@@ -80,9 +80,6 @@ export class HomeComponent implements OnInit {
       })
 
   }
-
-
-
   LogOut(){
     sessionStorage.setItem('userId','')
   }

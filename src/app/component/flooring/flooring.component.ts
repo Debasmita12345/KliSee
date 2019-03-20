@@ -25,6 +25,7 @@ export class FlooringComponent implements OnInit {
   flooring_list: Array<string> = [];
 
   myRoom: FormGroup;
+  materialCost: FormGroup;
 
   constructor(public flooring_service: FlooringService){
     this.myRoom=new FormGroup({
@@ -36,15 +37,19 @@ export class FlooringComponent implements OnInit {
       roomdoorways: new FormControl ('', [Validators.required]),
       roomstepdowns: new FormControl ('', [Validators.required])
     })
+    this.materialCost=new FormGroup({
+      casePackSize: new FormControl('', [Validators.required]),
+      pricePerSquerFeet: new FormControl ('', [Validators.required])
+    })
   }
 
   ngOnInit() {
     this.flooring_service.getFlooringList().subscribe(res=>{
-      console.log(res)
+      // console.log(res)
       let i: number;
       for(i=0; i<res.data.length; i++){
         this.flooring_list.push(res.data[i].type_name);
-        console.log(this.flooring_list)
+        // console.log(this.flooring_list)
       }
     })
   }

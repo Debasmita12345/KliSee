@@ -1,0 +1,39 @@
+<app-header></app-header>
+<main class="body-wrapper">
+  <app-service-heading></app-service-heading>
+  <section class="common-controller-question-answer yourroom-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <div class="room-details-holder metarial-cost heading-tag">
+            <h2>What will be your material cost?</h2>
+            <p>In light of your Selected service type and area underneath are the standard price for case pack size and Price per Square feet. You can utilize your very own information on the off chance that you wish.</p>
+            <form id="materialCost" method="POST" [formGroup]="materialCost">
+              <div class="room-details mt-5">
+                <div class="full-width">
+                  <div class="half-width">
+                    <mat-form-field>
+                      <input matInput placeholder="Case Pack Size" class="room_choose" formControlName="casePackSize" required>
+                    </mat-form-field>
+                  </div>
+                  <div class="half-width">
+                    <mat-form-field>
+                      <input matInput placeholder="Price per squre feet" class="room_choose" formControlName="pricePerSquerFeet" required>
+                    </mat-form-field>
+                  </div>
+                </div>
+                <div class="nxt-prev-btn-holder mt-4 mb-4">
+                  <a routerLink="/location" mat-button class="prev-btn">Previous</a>
+                  <a routerLink="/yourroom" mat-button class="next-btn">Next</a>
+                </div>
+                <div class="text-center">
+                  <button type="button" class="add-another-room color-yellow size-14">View Standard price table</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

@@ -1,0 +1,31 @@
+<app-header></app-header>
+<main class="body-wrapper">
+  <app-service-heading></app-service-heading>
+  <section class="common-controller-question-answer state-pin-wrapper">
+    <div class="container">
+      <div class="row">
+        <div class="col-12">
+          <figure class="question-answer-holder">
+            <div class="question-answer-title-holder">
+              <h2>What is the location of your project?</h2>
+              <div class="question-answer-icon-holder">
+                <i class="fa fa-map-marker"></i>
+              </div>
+            </div>
+            <figcaption>
+              <form class="question-answer-form">
+                <mat-form-field class="common-style-question-answer put-your-pin">
+                  <input matInput placeholder="Enter Zip Code">
+                </mat-form-field>
+                <div class="nxt-prev-btn-holder">
+                  <a routerLink="/flooring" mat-button class="prev-btn">Previous</a>
+                  <a routerLink="/materialcost" mat-button class="next-btn">Next</a>
+                </div>
+              </form>              
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>

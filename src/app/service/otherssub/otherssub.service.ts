@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class OtherssubService {
 
-  id: string = sessionStorage.getItem('modelId')
+  id: string = sessionStorage.getItem('reModelId')
   
   // sessionStorage.getItem('modelId');
  

@@ -1,41 +1,7 @@
 <app-header></app-header>
 <main class="body-wrapper">
-  <section class="main-heading-wrapper">
-    <div class="container">
-      <div class="row">
-          <div class="col-12 heading-tag collect-pin">
-            <h1>Let's get started creating your <strong>Kitchen Remodel Budget!</strong><span>We will need some details to develop the most accurate budget</span></h1>
-          </div>
-        </div>
-    </div>
-  </section>
-  <section class="common-controller-question-answer state-pin-wrapper" *ngIf="visible" [@slideInOut]>
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <figure class="question-answer-holder">
-            <div class="question-answer-title-holder">
-              <h2>What is the location of your project?</h2>
-              <div class="question-answer-icon-holder">
-                <i class="fa fa-map-marker"></i>
-              </div>
-            </div>
-            <figcaption>
-              <form class="question-answer-form">
-                <mat-form-field class="common-style-question-answer put-your-pin">
-                  <input matInput placeholder="Enter Zip Code">
-                </mat-form-field>
-                <div class="nxt-prev-btn-holder">
-                  <button type="button" (click)="visible = !visible" mat-button class="prev-btn">Previous</button>
-                </div>
-              </form>              
-            </figcaption>
-          </figure>
-        </div>
-      </div>
-    </div>
-  </section>
-  <section class="common-controller-question-answer state-pin-wrapper" *ngIf="!visible" [@slideInOut]>
+    <app-service-heading></app-service-heading>
+  <section class="common-controller-question-answer state-pin-wrapper">
     <div class="container">
       <div class="row">
         <div class="col-12">
@@ -61,8 +27,7 @@
                   </ul>
                 </mat-radio-group>
                 <div class="nxt-prev-btn-holder">
-                  <!-- <button type="button" (click)="!visible = visible" mat-button class="prev-btn">Previous</button> -->
-                  <button type="button" (click)="visible = !visible" mat-button class="next-btn">Next</button>
+                  <button type="button" routerLink="/location" mat-button class="next-btn">Next</button>
                 </div>
               </form>              
             </figcaption>
@@ -71,143 +36,4 @@
       </div>
     </div>
   </section>
-  <!-- <section class="common-controller-question-answer yourroom-wrapper">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="room-details-holder heading-tag">
-            <h2>Tell us something about your room</h2>
-            <form id="room" method="POST" [formGroup]="myRoom">
-              <ul class="room-details">
-                <li class="stor-room-details">
-                  <div class="room-holder">
-                    <h3>Room 1</h3>
-                    <div class="edit-delete-room-holder">
-                      <button type="button" class="edit-room"><i class="fa fa-pencil"></i></button>
-                      <button type="button" class="delete-room"><i class="fa fa-trash"></i></button>
-                    </div>
-                    <div class="full-width">
-                      <mat-form-field>
-                        <input matInput placeholder="Room Name" class="room_choose" formControlName="roomname" required>
-                      </mat-form-field>
-                    </div>
-                    <div class="full-width">
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Length of the room" class="room_choose" formControlName="roomlength" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Breadth of the room" class="room_choose" formControlName="roombreadth" required>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="quarter-controller quarter-third-width">
-                        <label>Do you need a demo?</label>
-                      </div>
-                      <div class="quarter-controller quarter-width">
-                        <mat-radio-group formControlName="roomDemoNeed">
-                          <mat-radio-button value="yes" required >Yes</mat-radio-button>
-                          <mat-radio-button value="no" required >No</mat-radio-button>
-                        </mat-radio-group>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="quarter-controller quarter-third-width">
-                        <label>Do you want to remove or replace your baseboards?</label>
-                      </div>
-                      <div class="quarter-controller quarter-width">
-                        <mat-radio-group formControlName="roomBaseboardNeed">
-                          <mat-radio-button value="yes" required >Yes</mat-radio-button>
-                          <mat-radio-button value="no" required >No</mat-radio-button>
-                        </mat-radio-group>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Doorways" class="room_choose" formControlName="roomdoorways" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Step downs" class="room_choose" formControlName="roomstepdowns" required>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-                <li class="active-room-details">
-                  <div class="room-holder">
-                    <h3>Room 2</h3>
-                    <div class="edit-delete-room-holder">
-                      <button type="button" class="edit-room"><i class="fa fa-pencil"></i></button>
-                      <button type="button" class="delete-room"><i class="fa fa-trash"></i></button>
-                    </div>
-                    <div class="full-width">
-                      <mat-form-field>
-                        <input matInput placeholder="Room Name" class="room_choose" formControlName="roomname" required>
-                      </mat-form-field>
-                    </div>
-                    <div class="full-width">
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Length of the room" class="room_choose" formControlName="roomlength" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Breadth of the room" class="room_choose" formControlName="roombreadth" required>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="quarter-controller quarter-third-width">
-                        <label>Do you need a demo?</label>
-                      </div>
-                      <div class="quarter-controller quarter-width">
-                        <mat-radio-group formControlName="roomDemoNeed">
-                          <mat-radio-button value="yes" required >Yes</mat-radio-button>
-                          <mat-radio-button value="no" required >No</mat-radio-button>
-                        </mat-radio-group>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="quarter-controller quarter-third-width">
-                        <label>Do you want to remove or replace your baseboards?</label>
-                      </div>
-                      <div class="quarter-controller quarter-width">
-                        <mat-radio-group formControlName="roomBaseboardNeed">
-                          <mat-radio-button value="yes" required >Yes</mat-radio-button>
-                          <mat-radio-button value="no" required >No</mat-radio-button>
-                        </mat-radio-group>
-                      </div>
-                    </div>
-                    <div class="full-width">
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Doorways" class="room_choose" formControlName="roomdoorways" required>
-                        </mat-form-field>
-                      </div>
-                      <div class="half-width">
-                        <mat-form-field>
-                          <input matInput placeholder="Step downs" class="room_choose" formControlName="roomstepdowns" required>
-                        </mat-form-field>
-                      </div>
-                    </div>
-                  </div>
-                </li>
-              </ul>
-              <div class="text-right"><button type="button" class="add-another-room">+ Add Another Room</button></div>
-              <div class="nxt-prev-btn-holder">
-                <button type="button"  mat-button class="next-btn">Next</button>
-              </div>
-            </form>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section> -->
 </main>
