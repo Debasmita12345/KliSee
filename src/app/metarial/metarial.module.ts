@@ -6,7 +6,7 @@ import { MatFormFieldModule, MatInputModule } from '@angular/material';
 import {MatAutocompleteModule} from '@angular/material/autocomplete'; 
 import {MatButtonModule} from '@angular/material/button'; 
 import {MatCheckboxModule} from '@angular/material/checkbox'; 
-
+import {MatRadioModule} from '@angular/material/radio'; 
 @NgModule({
   declarations: [],
   imports: [
@@ -16,7 +16,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatAutocompleteModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ],
   exports: [
     CommonModule,
@@ -25,7 +26,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
     MatInputModule,
     MatAutocompleteModule,
     MatButtonModule,
-    MatCheckboxModule
+    MatCheckboxModule,
+    MatRadioModule
   ]
 })
 export class MetarialModule { }

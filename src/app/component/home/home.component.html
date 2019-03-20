@@ -11,7 +11,7 @@
         <ul class="navbar-nav ml-auto">
           <li class="nav-item separater">
             <a class="nav-link" routerLink="/login"  *ngIf="!isloggedIn">Log In</a>
-            <a class="nav-link" routerLink="/login" *ngIf="isloggedIn" (click)="LogOut">Log Out</a>
+            <a class="nav-link" routerLink="/login" *ngIf="isloggedIn" (click)="LogOut()">Log Out</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" routerLink="/signup">Sign Up</a>
@@ -38,17 +38,17 @@
             <mat-form-field class="project-picker">
               <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
               <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
-                  {{option}}
+                <mat-option *ngFor="let option of filteredOptions | async" [value]=pp(option) (click)=ppr(ppv(option)) >
+                  {{ pp(option) }}
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>
           </form>   
           <!-- val = {{options[2]}} -->
           <!-- {{filteredOptions}} -->
-            <!-- <li *ngIf = "options.value === options[2]"> 
+            <!-- <li *ngIf = "options.value === options[2]">
               <<h2>HI</h2> -->
-                 <a routerLink="/flooring" class="get-started-btn">get started</a>    
+              <a routerLink="{{routerLink()}}" class="get-started-btn">get started</a>    
             <!-- </li> -->
         </div>
       </div>

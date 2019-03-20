@@ -11,6 +11,7 @@ import { HeaderComponent } from './header/header.component';
 import { FlooringComponent } from './flooring/flooring.component';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetPasswordComponent } from './reset-password/reset-password.component';
+import { OthersComponent } from './others/others.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ResetPasswordComponent } from './reset-password/reset-password.componen
     HeaderComponent,
     FlooringComponent,
     ForgetPasswordComponent,
-    ResetPasswordComponent
+    ResetPasswordComponent,
+    OthersComponent
   ],
   imports: [
     CommonModule,

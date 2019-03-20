@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FlooringService } from 'src/app/service/flooring/flooring.service';
+
 
 @Component({
   selector: 'app-flooring',
@@ -19,10 +22,31 @@ import { trigger, style, animate, transition } from '@angular/animations';
 })
 export class FlooringComponent implements OnInit {
 
-  constructor() { }
+  flooring_list: Array<string> = [];
 
-  ngOnInit() {
+  myRoom: FormGroup;
+
+  constructor(public flooring_service: FlooringService){
+    this.myRoom=new FormGroup({
+      roomname: new FormControl('', [Validators.required]),
+      roomlength: new FormControl ('', [Validators.required]),
+      roombreadth: new FormControl ('', [Validators.required]),
+      roomDemoNeed: new FormControl ('', [Validators.required]),
+      roomBaseboardNeed: new FormControl ('', [Validators.required]),
+      roomdoorways: new FormControl ('', [Validators.required]),
+      roomstepdowns: new FormControl ('', [Validators.required])
+    })
   }
 
+  ngOnInit() {
+    this.flooring_service.getFlooringList().subscribe(res=>{
+      console.log(res)
+      let i: number;
+      for(i=0; i<res.data.length; i++){
+        this.flooring_list.push(res.data[i].type_name);
+        console.log(this.flooring_list)
+      }
+    })
+  }
   visible:boolean = false;
 }

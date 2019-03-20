@@ -23,7 +23,7 @@ export class LoginComponent implements OnInit{
       email: new FormControl ('', [Validators.required,Validators.pattern(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/)]),
       password: new FormControl('', [Validators.required, Validators.minLength(6)])
     })
-
+    
   }
 
   loginFormSubmit(){
@@ -47,9 +47,9 @@ export class LoginComponent implements OnInit{
       this.message = res.message;
       console.log(this.message);
       this.success = res.success;
-      localStorage.setItem('userId', res.data.user_id )
+      sessionStorage.setItem('userId', res.data.user_id )
 
-      console.log(localStorage.getItem('userId'))
+      console.log(sessionStorage.getItem('userId'))
       setTimeout(() => {
         if(res.success){
           this.router.navigate(['/home']);
@@ -71,6 +71,7 @@ export class LoginComponent implements OnInit{
     else{
       this.show=true;
     }
+    
   }
   
   
