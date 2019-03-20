@@ -10,6 +10,6 @@ export class ParentremodelService {
   constructor(private http: HttpClient) { }
 
   getMainModel(): Observable<any>{
-    return this.http.get<any[]>('http://navkiraninfotech.com/Customers/custom/klisee/api/get_main_remodel_types')
+    return this.http.get<any[]>('https://navkiraninfotech.com/Customers/custom/klisee/api/get_main_remodel_types')
   }
 }

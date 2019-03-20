@@ -10,6 +10,6 @@ export class ForgetPasswordService {
 
   getEmail(email){
     var body = "email=" + email
-    return this.http.post(`http://navkiraninfotech.com/Customers/custom/klisee/api/forgot_password?`+ body, '' )
+    return this.http.post(`https://navkiraninfotech.com/Customers/custom/klisee/api/forgot_password?`+ body, '' )
   }
 }

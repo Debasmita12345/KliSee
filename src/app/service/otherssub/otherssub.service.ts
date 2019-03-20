@@ -11,7 +11,7 @@ export class OtherssubService {
   
   // sessionStorage.getItem('modelId');
  
-  url: string = "http://navkiraninfotech.com/Customers/custom/klisee/api/get_sub_types?remodel_id=" + this.id;
+  url: string = "https://navkiraninfotech.com/Customers/custom/klisee/api/get_sub_types?remodel_id=" + this.id;
   
   
 

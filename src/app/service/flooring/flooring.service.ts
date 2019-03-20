@@ -12,6 +12,6 @@ export class FlooringService {
   constructor(private http: HttpClient) { }
 
   getFlooringList():Observable<any>{
-    return this.http.get("http://navkiraninfotech.com/Customers/custom/klisee/api/get_all_sub_subtypes?subtype_id=" +this.id)
+    return this.http.get("https://navkiraninfotech.com/Customers/custom/klisee/api/get_all_sub_subtypes?subtype_id=" +this.id)
   }
 }
