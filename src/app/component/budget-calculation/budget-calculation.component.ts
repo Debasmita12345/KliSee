@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BudgetCalculationComponent implements OnInit {
 
+  title: string = sessionStorage.getItem('flooring')
+
   constructor() { }
 
   ngOnInit() {

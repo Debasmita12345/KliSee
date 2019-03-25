@@ -51,7 +51,7 @@ export class HomeComponent implements OnInit {
           let model: IModel;
           model = {remodel_id: res.data[i].remodel_id, remodel_name: res.data[i].remodel_name};
           // console.log(i)
-          //console.log(model)
+          // console.log(model)
           this.dataArr1.push(model)
           //sessionStorage.setItem('modelId', res.data[2].remodel_id )
           // console.log(this.dataArr1)

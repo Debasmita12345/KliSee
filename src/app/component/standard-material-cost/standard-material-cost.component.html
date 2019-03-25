@@ -20,14 +20,14 @@
                   </tr>
                 </thead>
                 <tbody>
-                  <tr>
-                    <td class="width-40">Pre finished flooring</td>
-                    <td class="text-right width-15">18</td>
-                    <td class="text-right width-15">$5.00</td>
-                    <td class="text-right width-20">$90.00</td>
-                    <td class="text-right width-10">85</td>
+                  <tr *ngFor="let c of costArr, let i=index">
+                    <td class="width-40">{{c.type_name}}</td>
+                    <td class="text-right width-15">{{c.case_pack}}</td>
+                    <td class="text-right width-15">{{c.cost_sf}}</td>
+                    <td class="text-right width-20">{{c.case_cost_pack}}</td>
+                    <td class="text-right width-10">{{c.shipping}}</td>
                   </tr>
-                  <tr>
+                  <!-- <tr>
                     <td class="width-40">Unfinished flooring(install 2 coats of poly)</td>
                     <td class="text-right width-15">19.86</td>
                     <td class="text-right width-15">$4.50</td>
@@ -68,7 +68,7 @@
                     <td class="text-right width-15">$3.00</td>
                     <td class="text-right width-20">$72.00</td>
                     <td class="text-right width-10">85</td>
-                  </tr>
+                  </tr> -->
                 </tbody>
               </table>
             </div>
