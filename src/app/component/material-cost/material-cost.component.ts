@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { MaterialCostService } from 'src/app/service/material/material-cost.service';
 
 @Component({
   selector: 'app-material-cost',
@@ -8,8 +9,10 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 })
 export class MaterialCostComponent implements OnInit {
   materialCost: FormGroup;
+  case_pack: string;
+  cost_sf: string;
 
-  constructor() { 
+  constructor(public materialCostService: MaterialCostService) { 
     this.materialCost=new FormGroup({
       casePackSize: new FormControl('', [Validators.required]),
       pricePerSquerFeet: new FormControl ('', [Validators.required])
@@ -17,6 +20,11 @@ export class MaterialCostComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.materialCostService.getMaterialCost().subscribe(res=>{
+      // console.log(res);
+      this.case_pack= res.data.case_pack;
+      this.cost_sf= res.data.cost_sf;
+    })
   }
 
 }

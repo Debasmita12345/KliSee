@@ -17,7 +17,7 @@ export class OthersComponent implements OnInit {
   ngOnInit() {
     
     this.othersservice.getOthersList().subscribe(res=>{
-      console.log(res)
+      // console.log(res)
       for(let i: number = 0; i<res.data.length; i++){
         this.service_name.push(res.data[i].subtype_name);
         // console.log(this.servicename)
