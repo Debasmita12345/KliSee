@@ -23,6 +23,7 @@ import { FlooringService } from 'src/app/service/flooring/flooring.service';
 export class FlooringComponent implements OnInit {
 
   flooring_list: Array<string> = [];
+  title: string = sessionStorage.getItem('flooring')
 
   myRoom: FormGroup;
   materialCost: FormGroup;

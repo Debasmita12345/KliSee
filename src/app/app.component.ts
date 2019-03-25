@@ -8,6 +8,6 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'klisee';
   constructor(){
-    console.log(sessionStorage.getItem('userId')+'pp')
+    // console.log(sessionStorage.getItem('userId')+'pp')
   }
 }

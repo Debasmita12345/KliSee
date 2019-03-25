@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 })
 export class FlooringService {
   
-  id: string= "1";
+  id: string= sessionStorage.getItem('flooringId')
 
   constructor(private http: HttpClient) { }
 

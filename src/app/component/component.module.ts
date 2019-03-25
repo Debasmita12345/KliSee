@@ -19,6 +19,7 @@ import { ServiceHeadingComponent } from './service-heading/service-heading.compo
 import { WorkTypeComponent } from './work-type/work-type.component';
 import { YourRoomComponent } from './your-room/your-room.component';
 import { LocationComponent } from './location/location.component';
+import { StandardMaterialCostComponent } from './standard-material-cost/standard-material-cost.component';
 
 @NgModule({
   declarations: [
@@ -36,7 +37,8 @@ import { LocationComponent } from './location/location.component';
     ServiceHeadingComponent,
     WorkTypeComponent,
     YourRoomComponent,
-    LocationComponent
+    LocationComponent,
+    StandardMaterialCostComponent
   ],
   imports: [
     CommonModule,

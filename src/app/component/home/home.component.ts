@@ -92,17 +92,17 @@ export class HomeComponent implements OnInit {
 
   }
   
-  pp(option:string){
+  val(option:string){
     var strp=option.split("|");
     return strp[1];
   }
 
-  ppv(option:string){
+  model_id(option:string){
     var strp=option.split("|");
     return strp[0];
   }
 
-   ppr(option:string){
+   fun_id(option:string){
     sessionStorage.setItem('reModelId',option)
    }
 

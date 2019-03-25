@@ -13,6 +13,8 @@ import { ForgetPasswordService } from 'src/app/service/forget/forget-password.se
 export class ForgetPasswordComponent implements OnInit{
 
   params: string;
+  show: boolean;
+  msg: string;
 
   myForgetFrm: FormGroup;
 
@@ -30,13 +32,21 @@ export class ForgetPasswordComponent implements OnInit{
     // console.log(paramId)
     
     // console.log(snapshot); 
+    if (this.myForgetFrm.status==='VALID'){
+      this.show=false;
+    }
+    else{
+      this.show=true;
+    }
   }
 
   forgetSubmit(){
     const userEmail=  this.myForgetFrm.value.email;
     console.log(userEmail)
     this.forgetService.getEmail(userEmail).subscribe(res=>{
-        // console.log(res)
+        console.log(res)
+        console.log(res.message)
+        this.msg = res.message;
       })
   }
 

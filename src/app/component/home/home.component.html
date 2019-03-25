@@ -39,8 +39,8 @@
             <mat-form-field class="project-picker">
               <input type="text" aria-label="Number" matInput [formControl]="myControl" [matAutocomplete]="auto">
               <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredOptions | async" [value]=pp(option) (click)=ppr(ppv(option)) >
-                  {{ pp(option) }}
+                <mat-option *ngFor="let option of filteredOptions | async" [value]= val(option) (click)=fun_id(model_id(option)) >
+                  {{ val(option) }}
                 </mat-option>
               </mat-autocomplete>
             </mat-form-field>

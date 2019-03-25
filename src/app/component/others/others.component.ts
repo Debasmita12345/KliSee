@@ -37,6 +37,9 @@ export class OthersComponent implements OnInit {
     //  if(){
       this.service_id;
       if(this.service_id[id] == '1'){
+        sessionStorage.setItem('flooring', this.service_name[id])
+        sessionStorage.setItem('flooringId', this.service_id[id])
+        // console.log(this.service_name[id])
         return true;
       }
      }
