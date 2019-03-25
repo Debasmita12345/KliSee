@@ -10,6 +10,6 @@ export class StandardMaterialCostService {
   constructor(private http: HttpClient) { }
 
   getStandardMaterialCost():Observable<any>{
-    return this.http.get("http://navkiraninfotech.com/Customers/custom/klisee/api/get_all_standard_cost")
+    return this.http.get("https://navkiraninfotech.com/Customers/custom/klisee/api/get_all_standard_cost")
   }
 }
