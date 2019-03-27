@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class YourRoomComponent implements OnInit {
   myRoom: FormGroup;
-  j:number=0;
+  // j:number=0;
   selectedIndex: number;
   select(index: number) {
       this.selectedIndex = index;
@@ -25,14 +25,14 @@ export class YourRoomComponent implements OnInit {
       rooms: this.fb.array([])
     })
     console.log(this.myRoom)
-    this.addRoom(0)
+    this.addRoom()
   }
 
   get roomForms() {
     return this.myRoom.get('rooms') as FormArray
   }
 
-  addRoom(i){
+  addRoom(){
     const room = this.fb.group({ 
       roomname: [],
       roomlength: [],
@@ -44,7 +44,7 @@ export class YourRoomComponent implements OnInit {
     })
 
     this.roomForms.push(room)
-    console.log(i)
+    // console.log(i)
   }
 
   deletePhone(i){
@@ -60,15 +60,15 @@ export class YourRoomComponent implements OnInit {
     // }
   }
 
-  getLength(i){
-    if((this.roomForms.length-1)==i){
-      return "active"
-    }
-    else{
-      return "stor"
-    }
+  // getLength(i){
+  //   if((this.roomForms.length-1)==i){
+  //     return "active"
+  //   }
+  //   else{
+  //     return "stor"
+  //   }
     // return this.roomForms.length
-  }
+  // }
   
   // clicked(event) {
   //   // event.target.classList.remove('stor-room-details')
