@@ -142,29 +142,32 @@
 @-moz-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
 @-ms-keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
 @keyframes pulse {to {box-shadow: 0 0 0 10px rgba(232, 76, 61, 0);}}
-.active-room-details .edit-delete-room-holder .edit-room{
+/* .active-room-details .edit-delete-room-holder .edit-room{
     display: none;
+} */
+.active-room-details.stor-room-details .edit-delete-room-holder .edit-room{
+    display: inline-block;
 }
-.room-details .stor-room-details:not(:last-child) .room-holder{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder{
     height: 40px;
     min-height: auto;
     overflow-y: hidden;
 }
-.room-details .stor-room-details:not(:last-child) .room-holder h3{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder h3{
     top: 10px;
     margin-left: 0;
 }
-.room-details .stor-room-details:not(:last-child) .room-holder .edit-delete-room-holder{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder{
     top: 6px;
 }
-.room-details .stor-room-details:not(:last-child) .room-holder .edit-delete-room-holder button{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder button{
     font-size: 13px;
     width: 25px;
     height: 25px;
     line-height: 25px;
     padding: 0;
 }
-.room-details .stor-room-details:not(:last-child) .room-holder .full-width{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .full-width{
     display: none;
 }
 

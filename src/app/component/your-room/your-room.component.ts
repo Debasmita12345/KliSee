@@ -1,4 +1,4 @@
-import { Component, OnInit} from '@angular/core';
+import { Component, OnInit, ViewChild} from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
@@ -8,9 +8,15 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class YourRoomComponent implements OnInit {
   myRoom: FormGroup;
+  selectedIndex: number;
+  select(index: number) {
+      this.selectedIndex = index;
+  }
   // element: Array<string> =[];
-  
 
+  status: boolean = false;
+  
+  
   constructor(private fb: FormBuilder) { }
 
   ngOnInit() {
@@ -19,8 +25,6 @@ export class YourRoomComponent implements OnInit {
     })
     console.log(this.myRoom)
     this.addRoom()
-
-
   }
 
   get roomForms() {
@@ -67,7 +71,7 @@ export class YourRoomComponent implements OnInit {
   // clicked(event) {
   //   // event.target.classList.remove('stor-room-details')
   //   var el = document.getElementById("removeClass_"+event)[0];
-  //   el.removeClass('stor-room-details');
+  //   el.nativeElement.classList.removeClass('stor-room-details');
 
   // }
 }
