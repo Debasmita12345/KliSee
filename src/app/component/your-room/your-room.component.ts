@@ -64,10 +64,10 @@ export class YourRoomComponent implements OnInit {
     // return this.roomForms.length
   }
   
-  clicked(event) {
-    // event.target.classList.remove('stor-room-details')
-    var el = document.getElementById("removeClass_"+event)[0];
-    el.removeClass('stor-room-details');
+  // clicked(event) {
+  //   // event.target.classList.remove('stor-room-details')
+  //   var el = document.getElementById("removeClass_"+event)[0];
+  //   el.removeClass('stor-room-details');
 
-  }
+  // }
 }
