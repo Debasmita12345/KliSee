@@ -23,6 +23,7 @@ import { FlooringService } from 'src/app/service/flooring/flooring.service';
 export class FlooringComponent implements OnInit {
 
   flooring_list: Array<string> = [];
+  flooring_id: Array<string> = [];
   title: string = sessionStorage.getItem('flooring')
 
   myRoom: FormGroup;
@@ -50,9 +51,17 @@ export class FlooringComponent implements OnInit {
       let i: number;
       for(i=0; i<res.data.length; i++){
         this.flooring_list.push(res.data[i].type_name);
-        // console.log(this.flooring_list)
+        this.flooring_id.push(res.data[i].id);
+        // console.log(localStorage.getItem('floorId'))
       }
     })
+    
+  }
+
+  getId(i){
+    
+    sessionStorage.setItem('floorId', i)
+     console.log(sessionStorage.getItem('floorId'))
   }
   visible:boolean = false;
 }

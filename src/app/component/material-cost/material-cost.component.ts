@@ -11,7 +11,7 @@ export class MaterialCostComponent implements OnInit {
   materialCost: FormGroup;
   case_pack: string;
   cost_sf: string;
-
+  floor_type_id: string=sessionStorage.getItem('floorId')
   constructor(public materialCostService: MaterialCostService) { 
     this.materialCost=new FormGroup({
       casePackSize: new FormControl('', [Validators.required]),
@@ -20,10 +20,14 @@ export class MaterialCostComponent implements OnInit {
   }
 
   ngOnInit() {
-    this.materialCostService.getMaterialCost().subscribe(res=>{
+    //localStorage.removeItem('floorId')
+   console.log(this.floor_type_id);
+    
+    this.materialCostService.getMaterialCost(this.floor_type_id).subscribe(res=>{
       // console.log(res);
       this.case_pack= res.data.case_pack;
       this.cost_sf= res.data.cost_sf;
+      
     })
   }
 

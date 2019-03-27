@@ -157,10 +157,10 @@
     top: 10px;
     margin-left: 0;
 }
-.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder{
+.room-details .stor-room-details:not(:last-child):not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder{
     top: 6px;
 }
-.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder button{
+.room-details .stor-room-details:not(.active-room-details) .room-holder .edit-delete-room-holder button{
     font-size: 13px;
     width: 25px;
     height: 25px;

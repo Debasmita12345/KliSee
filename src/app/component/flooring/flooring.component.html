@@ -4,7 +4,7 @@
     <div class="container">
       <div class="row">
           <div class="col-12 heading-tag collect-pin">
-            <h1>Let's get started creating your <strong>{{title}}</strong><span>We will need some details to develop the most accurate budget</span></h1>
+            <h1>Let's get started creating your <strong>Flooring Remodel Budget!</strong><span>We will need some details to develop the most accurate budget</span></h1>
           </div>
         </div>
     </div>
@@ -16,7 +16,7 @@
         <div class="col-12">
           <figure class="question-answer-holder">
             <div class="question-answer-title-holder">
-              <h2>What type of work do you need done</h2>
+              <h2>Please select the type of flooring you would like </h2>
               <div class="question-answer-icon-holder">
                 <img src="assets/images/engineer.png" alt="Worker">
               </div>
@@ -25,7 +25,7 @@
               <form class="question-answer-form">
                 <mat-radio-group>
                   <ul>
-                    <li *ngFor="let floorList of flooring_list"><mat-radio-button value="Pre finished flooring">{{floorList}}</mat-radio-button></li>
+                    <li *ngFor="let floorList of flooring_list, let i= index"  ><mat-radio-button value="{{floorList}}" (click)="getId(i+1)">{{floorList}}</mat-radio-button></li>
                     <!-- <li><mat-radio-button value="Unfinished Flooring">Unfinished Flooring</mat-radio-button></li>
                     <li><mat-radio-button value="Sanding and Refinishing existing">Sanding and Refinishing existing </mat-radio-button></li>
                     <li><mat-radio-button value="Hardwood Flooring">Hardwood Flooring</mat-radio-button></li>
