@@ -19,13 +19,14 @@
                           </ng-template> -->
                           <li [ngClass]="{'active-room-details': selectedIndex == i, 'stor-room-details': true}"  id="removeClass_{{i}}" *ngFor="let room of roomForms.controls; let i=index" [formGroupName]="i">
                               <div class="room-holder roomShow">
-                                <h3>Room {{i+1}}{{getIndex(i+1)}} </h3>
+                                <h3>Room {{i+1}}{{getIndex(i+1)}}</h3>
                                 <div class="edit-delete-room-holder">
                                     <div *ngIf="deleteButton(i); else blockwise">
                                       <button type="button" class="delete-room d-none" ><i class="fa fa-trash"></i></button>
                                     </div>
                                     <ng-template #blockwise><button type="button" class="delete-room" (click)="deletePhone(i)"><i class="fa fa-trash"></i></button></ng-template>
-                                    <button (click)="select(i)" type="button" class="edit-room" ><i class="fa fa-pencil"></i></button>
+                                    
+                                    <button [ngClass]="{'d-none': selectedIndexP == 1, 'edit-room': true}"   (click)="select(i)" type="button" ><i class="fa fa-pencil"></i></button>
                                     <!-- <button type="button" class="delete-room d-none" (click)="deletePhone(i)"><i class="fa fa-trash"></i></button> -->
                                     <!-- <ng-template #blockwise><button type="button" class="delete-room" (click)="deletePhone(i)" ><i class="fa fa-trash"></i></button></ng-template> -->
                                 </div>

@@ -9,8 +9,10 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 export class YourRoomComponent implements OnInit {
   myRoom: FormGroup;
   selectedIndex: any;
+  selectedIndexP: any;
   select(index: any) {
-      this.selectedIndex = index;
+      this.selectedIndex = index; 
+        this.selectedIndexP=0;
   }
  
   status: boolean = false;
@@ -22,9 +24,10 @@ export class YourRoomComponent implements OnInit {
     this.myRoom = this.fb.group({
       rooms: this.fb.array([])
     })
-    console.log(this.myRoom)
+    //console.log(this.myRoom)
     this.addRoom()
     this.select(0)
+    this.selectedIndexP=1;
   }
 
   get roomForms() {
@@ -32,6 +35,7 @@ export class YourRoomComponent implements OnInit {
   }
 
   addRoom(){
+   
     const room = this.fb.group({ 
       room: [],
       length: [],
@@ -44,6 +48,7 @@ export class YourRoomComponent implements OnInit {
 
     this.roomForms.push(room)
     this.select(sessionStorage.getItem('currentIndex'))
+    //this.selectedIndexP=1;
   }
 
   deletePhone(i){

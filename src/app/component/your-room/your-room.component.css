@@ -165,9 +165,11 @@
 }
 .room-details .stor-room-details .room-holder .full-width{
     pointer-events: none;
+    display: none;
 }
 .room-details .stor-room-details.active-room-details .room-holder .full-width{
     pointer-events: all;
+    display: inherit;
 }
 .room-details .active-room-details.stor-room-details .room-holder .edit-delete-room-holder{
     top: -16px;
