@@ -148,17 +148,26 @@
 .active-room-details.stor-room-details .edit-delete-room-holder .edit-room{
     display: inline-block;
 }
-.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder{
+.room-details .stor-room-details:not(.active-room-details) .room-holder{
     height: 40px;
     min-height: auto;
     overflow-y: hidden;
 }
-.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder h3{
+.room-details .stor-room-details:not(.active-room-details) .room-holder h3{
     top: 10px;
     margin-left: 0;
 }
-.room-details .stor-room-details:not(:last-child):not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder{
+.room-details .stor-room-details:not(:last-child):not(.active-room-details) .room-holder .edit-delete-room-holder{
     top: 6px;
+}
+.room-details .stor-room-details .room-holder .edit-delete-room-holder{
+    top: 6px;
+}
+.room-details .stor-room-details .room-holder .full-width{
+    pointer-events: none;
+}
+.room-details .active-room-details.stor-room-details .room-holder .edit-delete-room-holder{
+    top: -16px;
 }
 .room-details .stor-room-details:not(.active-room-details) .room-holder .edit-delete-room-holder button{
     font-size: 13px;

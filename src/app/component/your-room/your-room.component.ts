@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 
 @Component({
@@ -8,13 +8,11 @@ import { FormGroup, FormBuilder, FormArray } from '@angular/forms';
 })
 export class YourRoomComponent implements OnInit {
   myRoom: FormGroup;
-  // j:number=0;
-  selectedIndex: number;
-  select(index: number) {
+  selectedIndex: any;
+  select(index: any) {
       this.selectedIndex = index;
   }
-  // element: Array<string> =[];
-
+ 
   status: boolean = false;
   
   
@@ -26,6 +24,7 @@ export class YourRoomComponent implements OnInit {
     })
     console.log(this.myRoom)
     this.addRoom()
+    this.select(0)
   }
 
   get roomForms() {
@@ -44,7 +43,7 @@ export class YourRoomComponent implements OnInit {
     })
 
     this.roomForms.push(room)
-    // console.log(i)
+    this.select(sessionStorage.getItem('currentIndex'))
   }
 
   deletePhone(i){
@@ -59,21 +58,8 @@ export class YourRoomComponent implements OnInit {
     //   return true;
     // }
   }
-
-  // getLength(i){
-  //   if((this.roomForms.length-1)==i){
-  //     return "active"
-  //   }
-  //   else{
-  //     return "stor"
-  //   }
-    // return this.roomForms.length
-  // }
+  getIndex(index){
+     sessionStorage.setItem('currentIndex',index);
   
-  // clicked(event) {
-  //   // event.target.classList.remove('stor-room-details')
-  //   var el = document.getElementById("removeClass_"+event)[0];
-  //   el.nativeElement.classList.removeClass('stor-room-details');
-
-  // }
+  }
 }
