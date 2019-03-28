@@ -34,13 +34,13 @@ export class YourRoomComponent implements OnInit {
 
   addRoom(){
     const room = this.fb.group({ 
-      roomname: [],
-      roomlength: [],
-      roombreadth: [],
-      roomDemoNeed: [],
-      roomBaseboardNeed: [],
-      roomdoorways: [],
-      roomstepdowns: []
+      room: [],
+      length: [],
+      depth: [],
+      demo: [],
+      baseboards: [],
+      doorways: [],
+      step_down: []
     })
 
     this.roomForms.push(room)

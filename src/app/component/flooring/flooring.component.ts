@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { trigger, style, animate, transition } from '@angular/animations';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+// import { FormGroup, FormControl, Validators } from '@angular/forms';
 import { FlooringService } from 'src/app/service/flooring/flooring.service';
+import { IFloor } from 'src/app/floortype';
 
 
 @Component({
@@ -22,28 +23,16 @@ import { FlooringService } from 'src/app/service/flooring/flooring.service';
 })
 export class FlooringComponent implements OnInit {
 
+
+  floorArr: Array<IFloor> = []
   flooring_list: Array<string> = [];
   flooring_id: Array<string> = [];
-  title: string = sessionStorage.getItem('flooring')
+  title: string = sessionStorage.getItem('flooring');
+  options: Array<string> = [];
+  firstValue: string;
 
-  myRoom: FormGroup;
-  materialCost: FormGroup;
 
-  constructor(public flooring_service: FlooringService){
-    this.myRoom=new FormGroup({
-      roomname: new FormControl('', [Validators.required]),
-      roomlength: new FormControl ('', [Validators.required]),
-      roombreadth: new FormControl ('', [Validators.required]),
-      roomDemoNeed: new FormControl ('', [Validators.required]),
-      roomBaseboardNeed: new FormControl ('', [Validators.required]),
-      roomdoorways: new FormControl ('', [Validators.required]),
-      roomstepdowns: new FormControl ('', [Validators.required])
-    })
-    this.materialCost=new FormGroup({
-      casePackSize: new FormControl('', [Validators.required]),
-      pricePerSquerFeet: new FormControl ('', [Validators.required])
-    })
-  }
+  constructor(public flooring_service: FlooringService){ }
 
   ngOnInit() {
     this.flooring_service.getFlooringList().subscribe(res=>{
@@ -52,16 +41,47 @@ export class FlooringComponent implements OnInit {
       for(i=0; i<res.data.length; i++){
         this.flooring_list.push(res.data[i].type_name);
         this.flooring_id.push(res.data[i].id);
+        // console.log(this.flooring_id)
         // console.log(localStorage.getItem('floorId'))
+        let model: IFloor;
+        model = {floor_id: res.data[i].id, floor_name: res.data[i].type_name};
+        this.floorArr.push(model)
+      }
+      for(i=0; i<this.floorArr.length; i++){
+        let both: string;
+        both = res.data[i].id+'|'+ res.data[i].type_name;
+        this.options.push(both);
+        // console.log(this.options)
+        if(i==0){
+          this.firstValue= res.data[i].id
+        }
       }
     })
     
   }
 
-  getId(i){
-    
-    sessionStorage.setItem('floorId', i)
-     console.log(sessionStorage.getItem('floorId'))
+  name(option:string){
+    var strp=option.split("|");
+    return strp[1];
   }
+
+  floor_id(option:string){
+    var strp=option.split("|");
+    return strp[0];
+  }
+
+  fun_id(option:string){
+    sessionStorage.setItem('floorId',option)
+   }
+
+   func(option){
+    // sessionStorage.setItem('flrId',option)
+   }
+
+  // getId(i){
+    
+  //   sessionStorage.setItem('floorId', i)
+  //    console.log(sessionStorage.getItem('floorId'))
+  // }
   visible:boolean = false;
 }

@@ -25,7 +25,12 @@
               <form class="question-answer-form">
                 <mat-radio-group>
                   <ul>
-                    <li *ngFor="let floorList of flooring_list, let i= index"  ><mat-radio-button value="{{floorList}}" (click)="getId(i+1)">{{floorList}}</mat-radio-button></li>
+                    <li *ngFor="let option of options, let i=index"  >
+                      <!-- <div *ngIf ="i==0" >{{func(floor_id(option))}}</div> -->
+                      <mat-radio-button value={{name(option)}} (click)=fun_id(floor_id(option)) >{{name(option)}} </mat-radio-button>
+                      <!-- <a>{{floor_id(option)}}</a> -->
+                    </li>
+                    <li><mat-radio-button value="not sure" (click)=fun_id(firstValue) >not sure</mat-radio-button></li>
                     <!-- <li><mat-radio-button value="Unfinished Flooring">Unfinished Flooring</mat-radio-button></li>
                     <li><mat-radio-button value="Sanding and Refinishing existing">Sanding and Refinishing existing </mat-radio-button></li>
                     <li><mat-radio-button value="Hardwood Flooring">Hardwood Flooring</mat-radio-button></li>
