@@ -10,10 +10,10 @@ export class HeaderComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    if(sessionStorage.getItem('userId') !=''){
-      this.isloggedIn = true;
+    if(sessionStorage.getItem('userId') ===null || sessionStorage.getItem('userId') == ''){
+      this.isloggedIn = false;
     } else {
-      this.isloggedIn= false; 
+      this.isloggedIn= true; 
     }
   }
 

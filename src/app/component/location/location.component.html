@@ -14,12 +14,13 @@
             </div>
             <figcaption>
               <form class="question-answer-form" [formGroup]="myLocationFrm">
+                <p class="alert">{{message}}</p>
                 <mat-form-field class="common-style-question-answer put-your-pin">
                   <input matInput placeholder="Enter Zip Code" formControlName="place">
                 </mat-form-field>
                 <div class="nxt-prev-btn-holder">
                   <a routerLink="/flooring" mat-button class="prev-btn">Previous</a>
-                  <a routerLink="/materialcost" (click)="locationSubmit()" mat-button class="next-btn">Next</a>
+                  <a (click)="locationSubmit()" mat-button class="next-btn">Next</a>
                 </div>
               </form>              
             </figcaption>

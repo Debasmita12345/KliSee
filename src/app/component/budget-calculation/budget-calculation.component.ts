@@ -44,7 +44,8 @@ export class BudgetCalculationComponent implements OnInit {
         // console.log(res.data.material_budget[i].field_name)
         let Bcost : IBudget;
         Bcost=
-        { field_name: res.data.installation_budget[i].field_name, 
+        {
+          field_name: res.data.installation_budget[i].field_name, 
           overall_cost: res.data.installation_budget[i].overall_cost,
           standard_cost: res.data.installation_budget[i].standard_cost,
           value: res.data.installation_budget[i].value

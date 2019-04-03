@@ -27,7 +27,7 @@ export class MaterialCostComponent implements OnInit {
   //  console.log(this.floor_type_id);
     
     this.materialCostService.getMaterialCost(this.floor_type_id).subscribe(res=>{
-      console.log(res);
+      // console.log(res);
       sessionStorage.setItem('casePack', res.data.case_pack)
       sessionStorage.setItem ('priceSquare', res.data.cost_sf)
       sessionStorage.setItem('manufacturer', res.data.material_name)
