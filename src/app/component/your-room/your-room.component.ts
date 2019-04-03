@@ -55,8 +55,7 @@ export class YourRoomComponent implements OnInit {
       depth: [],
       demo: [],
       baseboards: [],
-      doorways: [],
-      step_down: []
+      doorways: []
     })
 
     this.roomForms.push(room)

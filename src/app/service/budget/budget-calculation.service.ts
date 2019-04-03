@@ -24,8 +24,18 @@ export class BudgetCalculationService {
     let priceSquare=sessionStorage.getItem('priceSquare');
     let manufacturer=sessionStorage.getItem('manufacturer');
     let sku=sessionStorage.getItem('sku')
+    let userId=sessionStorage.getItem('userId')
     //console.log(sessionStorage.getItem('casePack'));
-    var body = "all_data_collection="+ this.rooms+ "&case_pack_size="+ casePack + "&price_per_sf="+ priceSquare+ "&zip_code="+ this.place+ "&remodel_type_id="+ this.modelId+ "&remodel_sub_type_id="+ this.others+ "&remodel_sub_sub_type_id="+ this.flooring+ "&user_id="+ " "+ "&material_name="+ manufacturer+ "&sku="+ sku;
+    var body = "all_data_collection="+ this.rooms
+              +"&case_pack_size="+ casePack 
+              + "&price_per_sf="+ priceSquare
+              + "&zip_code="+ this.place
+              + "&remodel_type_id="+ this.modelId
+              + "&remodel_sub_type_id="+ this.others
+              + "&remodel_sub_sub_type_id="+ this.flooring
+              + "&user_id="+ userId
+              + "&material_name="+ manufacturer
+              + "&sku="+ sku;
     console.log(body)
     return this.http.post(`https://navkiraninfotech.com/Customers/custom/klisee/api/budget_calculation?`+ body, "")
   }

@@ -14,7 +14,8 @@
             </div>
             <figcaption>
               <form class="question-answer-form" [formGroup]="myLocationFrm">
-                <p class="alert">{{message}}</p>
+                <span *ngIf="a, else blockwise"><p class="text-center mb-2 pt-0 alert" style="color:#155724;">{{message}}</p></span>
+                <ng-template #blockwise><p class="text-center mb-2 pt-0 alert">{{message}}</p></ng-template>
                 <mat-form-field class="common-style-question-answer put-your-pin">
                   <input matInput placeholder="Enter Zip Code" formControlName="place">
                 </mat-form-field>
