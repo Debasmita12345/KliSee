@@ -29,6 +29,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     border: 1px solid rgba(68,98,119,0.27);
+    position: relative;
 }
 .other-service-button-holder{
     display: flex;
@@ -50,12 +51,49 @@
     border-radius: 6px;
     box-shadow: 5px 0 27px rgba(68,98,119,0.16);
     transition: all ease-in-out 0.3s;
+    text-transform: capitalize;
 }
 .other-service-button-holder li a.active,
 .other-service-button-holder li a:hover,
 .other-service-button-holder li a:active{
     background-color: #446277;
     color: #fff;
+}
+.other-service-default-button-holder{
+    display: flex;
+}
+.other-service-default-button-holder button{
+    display: inline-block;
+    line-height: 34px;
+}
+.get-started-btn {
+    background-color: #e0bf66;
+    color: #12222f;
+    text-transform: capitalize;
+    font-size: 15px;
+    text-align: center;
+    display: table;
+    margin: 0 5px;
+    padding: 2px 15px;
+    transition: all ease-in-out 0.3s;
+}
+.get-started-btn:hover, 
+.get-started-btn:active, 
+.get-started-btn:focus {
+    text-decoration: none;
+    background-color: #a78c43;
+}
+.other-service-default-button-holder{
+    display: flex;
+    font-weight: bold;
+    justify-content: center;
+    background-color: rgba(24,55,76,0.70);
+    padding: 20px 20px;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
 }
 
 @media(min-width:320px) and (max-width:767px){

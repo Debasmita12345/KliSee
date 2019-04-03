@@ -32,7 +32,7 @@ export class FlooringComponent implements OnInit {
   firstValue: string;
 
 
-  constructor(public flooring_service: FlooringService){ }
+  constructor(public flooring_service: FlooringService){}
 
   ngOnInit() {
     this.flooring_service.getFlooringList().subscribe(res=>{
@@ -74,9 +74,9 @@ export class FlooringComponent implements OnInit {
     sessionStorage.setItem('floorId',option)
    }
 
-   func(option){
-    // sessionStorage.setItem('flrId',option)
-   }
+  //  func(option){
+  //   // sessionStorage.setItem('flrId',option)
+  //  }
 
   // getId(i){
     

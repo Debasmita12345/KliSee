@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-location',
@@ -7,9 +8,19 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LocationComponent implements OnInit {
 
-  constructor() { }
+  myLocationFrm: FormGroup;
+
+  constructor() { 
+    this.myLocationFrm = new FormGroup({
+      place: new FormControl('', [Validators.required])
+    })
+  }
 
   ngOnInit() {
+  }
+
+  locationSubmit(){
+    sessionStorage.setItem('place', this.myLocationFrm.value.place)
   }
 
 }

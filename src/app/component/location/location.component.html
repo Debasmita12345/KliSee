@@ -7,19 +7,19 @@
         <div class="col-12">
           <figure class="question-answer-holder">
             <div class="question-answer-title-holder">
-              <h2>What is the location of your project?</h2>
+              <h2>In order to calculate your labor rates we will need the zip code of your project’s location</h2>
               <div class="question-answer-icon-holder">
                 <i class="fa fa-map-marker"></i>
               </div>
             </div>
             <figcaption>
-              <form class="question-answer-form">
+              <form class="question-answer-form" [formGroup]="myLocationFrm">
                 <mat-form-field class="common-style-question-answer put-your-pin">
-                  <input matInput placeholder="Enter Zip Code">
+                  <input matInput placeholder="Enter Zip Code" formControlName="place">
                 </mat-form-field>
                 <div class="nxt-prev-btn-holder">
                   <a routerLink="/flooring" mat-button class="prev-btn">Previous</a>
-                  <a routerLink="/materialcost" mat-button class="next-btn">Next</a>
+                  <a routerLink="/materialcost" (click)="locationSubmit()" mat-button class="next-btn">Next</a>
                 </div>
               </form>              
             </figcaption>

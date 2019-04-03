@@ -13,7 +13,7 @@ export class SignUpService {
   getUserId(data):Observable<any>{
     // console.log(data)
     var body = "name=" + data.name + "&email=" + data.email + "&password=" + data.password;
-    console.log(body)
+    // console.log(body)
     // var data1  = {"first_name":"anup","email":"g@YJUYUYUYS","password":"dfsqq"}
     return this.http.post(`https://navkiraninfotech.com/Customers/custom/klisee/api/signup?`+ body,"")
   }

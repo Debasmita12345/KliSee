@@ -38,18 +38,18 @@
                                 <div class="full-width">
                                     <div class="half-width">
                                       <mat-form-field>
-                                          <input matInput placeholder="Length of the room" class="room_choose" formControlName="length" required>
+                                          <input matInput placeholder="Rough Length of the room in feet" class="room_choose" formControlName="length" required>
                                       </mat-form-field>
                                     </div>
                                     <div class="half-width">
                                       <mat-form-field>
-                                          <input matInput placeholder="Breadth of the room" class="room_choose" formControlName="depth" required>
+                                          <input matInput placeholder="Rough Depth of the room in feet" class="room_choose" formControlName="depth" required>
                                       </mat-form-field>
                                     </div>
                                 </div>
                                 <div class="full-width">
                                     <div class="quarter-controller quarter-third-width">
-                                      <label>Do you need a demo?</label>
+                                      <label>Will you need demolition of the original flooring?</label>
                                     </div>
                                     <div class="quarter-controller quarter-width">
                                       <mat-radio-group formControlName="demo">
@@ -70,16 +70,14 @@
                                     </div>
                                 </div>
                                 <div class="full-width">
-                                    <div class="half-width">
-                                      <mat-form-field>
-                                          <input matInput placeholder="Doorways" class="room_choose" formControlName="doorways" required>
-                                      </mat-form-field>
-                                    </div>
-                                    <div class="half-width">
+                                    <mat-form-field>
+                                        <input matInput placeholder="How many doorways are there into this room?" class="room_choose" formControlName="doorways" required>
+                                    </mat-form-field>
+                                    <!-- <div class="half-width">
                                       <mat-form-field>
                                           <input matInput placeholder="Step downs" class="room_choose" formControlName="step_down" required>
                                       </mat-form-field>
-                                    </div>
+                                    </div> -->
                                 </div>
                               </div>
                           </li>
@@ -88,7 +86,7 @@
                <div class="text-right"><button type="button" class="add-another-room" (click)=addRoom()>+ Add Another Room</button></div>
                <div class="nxt-prev-btn-holder">
                <a routerLink="/materialcost" mat-button class="prev-btn">Previous</a>
-               <a routerLink="/budgetcalculation" mat-button class="next-btn">Next</a>
+               <a routerLink="/budgetcalculation" mat-button class="next-btn" (click)="RoomFormSubmit()">Next</a>
                </div>
                </form>
             </div>

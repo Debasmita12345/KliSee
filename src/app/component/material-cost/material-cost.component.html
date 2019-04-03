@@ -6,28 +6,43 @@
       <div class="row">
         <div class="col-12">
           <div class="room-details-holder metarial-cost heading-tag">
-            <h2>What will be your material cost?</h2>
-            <p>In light of your Selected service type and area underneath are the standard price for case pack size and Price per Square feet. You can utilize your very own information on the off chance that you wish.</p>
+            <h2>We will calculate your material budget</h2>
+            <p>If you know the exact product you are interested in you can provide the name, SKU, case pack and price per square foot. If not, we will default to a standard price for budgeting purposes</p>
             <form id="materialCost" method="POST" [formGroup]="materialCost">
-              <div class="room-details mt-5">
+              <div class="room-details metarial-cost-details mt-5">
                 <div class="full-width">
                   <div class="half-width">
                     <mat-form-field>
-                      <input matInput placeholder="Case Pack Size" class="room_choose" formControlName="casePackSize" value="{{case_pack}}" required>
+                      <input matInput  class="room_choose" placeholder="Manufacturer" formControlName="manuFacturer" value={{manufacturer}} required>
                     </mat-form-field>
                   </div>
                   <div class="half-width">
                     <mat-form-field>
-                      <input matInput placeholder="Price per squre feet" class="room_choose" formControlName="pricePerSquerFeet" value="{{cost_sf}}" required>
+                      <input matInput placeholder="Case Pack Size" class="room_choose" formControlName="casePackSize" value="{{case_pack}}" required>
+                      <span matSuffix>Sf / Case</span>
+                    </mat-form-field>
+                  </div>
+                  
+                </div>
+                <div class="full-width">
+                  <div class="half-width">
+                    <mat-form-field>
+                      <input matInput  class="room_choose" placeholder="SKU" formControlName="sku">
+                    </mat-form-field>
+                  </div>
+                  <div class="half-width">
+                    <mat-form-field>
+                      <input matInput placeholder="Price" class="room_choose" formControlName="pricePerSquerFeet" value="{{cost_sf}}" required>
+                      <span matSuffix>Per / Sf</span>
                     </mat-form-field>
                   </div>
                 </div>
                 <div class="nxt-prev-btn-holder mt-4 mb-4">
                   <a routerLink="/location" mat-button class="prev-btn">Previous</a>
-                  <a routerLink="/yourroom" mat-button class="next-btn">Next</a>
+                  <a routerLink="/yourroom" mat-button class="next-btn" (click)="materialCostSubmit()">Next</a>
                 </div>
                 <div class="text-center">
-                  <button type="button" class="add-another-room color-yellow size-14" routerLink="/standard-material-cost">View Standard price table</button>
+                  <button type="button" class="add-another-room color-yellow size-14"  routerLink="/standard-material-cost">View Standard price table</button>
                 </div>
               </div>
             </form>

@@ -20,6 +20,7 @@ import { WorkTypeComponent } from './work-type/work-type.component';
 import { YourRoomComponent } from './your-room/your-room.component';
 import { LocationComponent } from './location/location.component';
 import { StandardMaterialCostComponent } from './standard-material-cost/standard-material-cost.component';
+import { MyAccountComponent } from './my-account/my-account.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { StandardMaterialCostComponent } from './standard-material-cost/standard
     WorkTypeComponent,
     YourRoomComponent,
     LocationComponent,
-    StandardMaterialCostComponent
+    StandardMaterialCostComponent,
+    MyAccountComponent
   ],
   imports: [
     CommonModule,

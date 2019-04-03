@@ -35,8 +35,8 @@ export class LoginComponent implements OnInit{
       'email': this.myLoginFrm.value.email,
       'password': this.myLoginFrm.value.password
     }
-    console.log(details)
-    console.log(this.myLoginFrm)
+    // console.log(details)
+    // console.log(this.myLoginFrm)
     // console.log(this.myLoginFrm)
     // console.log(this.myLoginFrm.status)
 

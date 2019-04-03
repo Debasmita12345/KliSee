@@ -302,6 +302,16 @@ ul{
     background: linear-gradient(90deg,#c8c8c8,#e0e3e3,#c6c6c6);
     border-color: #cfcfcf !important;
 }
+.metarial-cost-details .mat-input-element{
+    padding-bottom: 0;
+    font-size: 12px;
+}
+.metarial-cost-details .mat-form-field-prefix, .metarial-cost-details .mat-form-field-suffix {
+    color: #fff;
+}
+
+
+
 /* Media Query */
 
 @media(min-width:320px) and (max-width:767px)
@@ -333,6 +343,9 @@ ul{
         font-size: 13px !important;
     }
     .mat-radio-label-content{
+        font-size: 12px !important;
+    }
+    .mat-form-field-prefix,.mat-form-field-suffix{
         font-size: 12px !important;
     }
 }

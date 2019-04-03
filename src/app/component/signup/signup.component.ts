@@ -19,6 +19,7 @@ export class SignupComponent implements OnInit{
   message: string;
   password: string;
   confirm_password: string;
+  success: boolean;
   
   constructor(public signupService: SignUpService,
               public router: Router) { 
@@ -78,18 +79,24 @@ export class SignupComponent implements OnInit{
       'email': this.myForm.value.email,
       'password': this.myForm.value.password
     }
-    console.log(user)
-    console.log(this.myForm)
+    // console.log(user)
+    // console.log(this.myForm)
     
     this.signupService.getUserId(user).subscribe(res=>{
       console.log(res);
-      this.id = res.data.user_id;
-      console.log(this.id);
+      // this.id = res.data.user_id;
+      // console.log(this.id);
       this.message = res.message;
-      console.log(this.message);     
+      console.log(this.message);
+      this.success = res.success;     
+      // setTimeout(() => {
+      //     this.router.navigate(['/login']);
+      // }, 1000);  //1s
       setTimeout(() => {
+        if(res.success){
           this.router.navigate(['/login']);
-      }, 1000);  //1s
+        }
+    }, 1000); 
     })
   }
 

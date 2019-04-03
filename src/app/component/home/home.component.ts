@@ -31,11 +31,11 @@ export class HomeComponent implements OnInit {
   }
 
   ngOnInit() {
-    
-    if(sessionStorage.getItem('userId') !== ''){
-      this.isloggedIn = true;
-    } else {
+    console.log('is login:'+sessionStorage.getItem('userId'));
+    if(sessionStorage.getItem('userId') ===null || sessionStorage.getItem('userId') == ''){
       this.isloggedIn= false; 
+    } else {
+      this.isloggedIn = true;
     }
     this.modelservice.getMainModel().subscribe(res=>
       {
@@ -104,11 +104,11 @@ export class HomeComponent implements OnInit {
 
    fun_id(option:string){
     sessionStorage.setItem('reModelId',option)
+    sessionStorage.setItem('ModelId',option)
    }
 
    routerLink(){
      var reModelId=sessionStorage.getItem('reModelId');
-    // console.log(sessionStorage.getItem('reModelId'));
     if(reModelId=='3'){
       return '/others';
     }

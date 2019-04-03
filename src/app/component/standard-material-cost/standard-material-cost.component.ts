@@ -35,7 +35,7 @@ export class StandardMaterialCostComponent implements OnInit {
         // this.service_shipping.push(res.data[i].shipping);
       }
     })
-    console.log(this.costArr)
+    // console.log(this.costArr)
   }
 
 }

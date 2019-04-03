@@ -7,7 +7,12 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'klisee';
+  isloggedIn: boolean;
   constructor(){
-    // console.log(sessionStorage.getItem('userId')+'pp')
+    if(sessionStorage.getItem('userId') !=''){
+      this.isloggedIn = true;
+    } else {
+      this.isloggedIn= false; 
+    }
   }
 }
